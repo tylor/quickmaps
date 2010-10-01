@@ -25,10 +25,12 @@ function quickmaps_profile_details() {
 function quickmaps_profile_modules() {
   return array(
   // Core
-  
+  'menu',
   // Contrib
-  'admin', 'content', 'ctools', 'features', 'strongarm', 'gmap',
-  'node_import', 'date', 'views',
+  'admin', 'content', 'text', 'ctools', 'features', 'strongarm', 'gmap',
+  'date_api', 'date', 'node_import', 'views', 
+  // Features
+  'quickmap',
   );
 }
 
@@ -168,4 +170,38 @@ function quickmaps_profile_tasks(&$task, $url) {
   // Update the menu router information.
   menu_rebuild();
   */
+}
+
+/**
+ * Set Quickmaps as default install profile.
+ */
+function system_form_install_select_profile_form_alter(&$form, $form_state) {
+  foreach($form['profile'] as $key => $element) {
+    $form['profile'][$key]['#value'] = 'quickmaps';
+  }
+}
+
+/**
+ * Implementation of hook_form_alter().
+ *
+ * Allows the profile to alter the site-configuration form. This is
+ * called through custom invocation, so $form_state is not populated.
+ */
+function quickmaps_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'install_configure') {
+    $form['site_information']['site_name']['#default_value'] = $_SERVER['SERVER_NAME'];
+    $form['site_information']['site_mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST'];
+    $form['admin_account']['account']['name']['#default_value'] = 'admin';
+    $form['admin_account']['account']['mail']['#default_value'] = 'admin@'. $_SERVER['HTTP_HOST'];
+    
+    // GMap API settings so we're ready to go after install.
+    $form['server_settings']['googlemap_api_key']['#access'] = FALSE;
+    $form['server_settings']['googlemap_api_key'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Google Maps API Key'),
+      '#default_value' => NULL,
+      '#description' => t('Enter your Google Maps API key, if you do not have one, get it <a href="http://code.google.com/apis/maps/signup.html">here</a>.'),
+      '#required' => TRUE,
+    );
+  }
 }
