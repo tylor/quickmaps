@@ -1,5 +1,5 @@
 A simple, lean Drupal mapping distribution.
 
 To build this distribution, download Drupal and place quickmaps in the 
-'profiles' directory. Then run 'build.sh' to create the codebase with
-drush make. Then simply install Drupal normally.
+'profiles' directory. Run './build.sh' from the quickmaps directory to 
+create the codebase with drush make. Then simply install Drupal normally.
