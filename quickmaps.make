@@ -26,10 +26,11 @@ projects[gmap][version] = "1.1"
 projects[node_import][subdir] = "contrib"
 projects[node_import][version] = "1.0-rc4"
 
+; Dependencies of node_import
+
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.6"
 
-; Themes
-projects[rubik][location] = http://code.developmentseed.org/fserver
-projects[singular][location] = http://code.developmentseed.org/fserver
-projects[tao][location] = http://code.developmentseed.org/fserver
+projects[advanced_help][subdir] = "contrib"
+projects[advanced_help][version] = "1.2"
+

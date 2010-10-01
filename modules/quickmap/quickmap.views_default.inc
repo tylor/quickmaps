@@ -8,7 +8,7 @@ function quickmap_views_default_views() {
 
   // Exported view: Map
   $view = new view;
-  $view->name = 'Map';
+  $view->name = 'map';
   $view->description = '';
   $view->tag = '';
   $view->view_php = '';
@@ -198,7 +198,7 @@ function quickmap_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler->override_option('empty', 'Welcome to Quickmaps, a simple Drupal distribution for mapping. To get started <a href="/node/add/location?destination=map">add a location</a>.');
+  $handler->override_option('empty', 'Welcome to Quickmaps, a simple Drupal distribution for mapping. To get started <a href="/node/add/location?destination=map">add a location</a> or <a href="admin/content/node_import">import locations</a>.');
   $handler->override_option('empty_format', '1');
   $handler->override_option('items_per_page', 0);
   $handler->override_option('style_plugin', 'gmap');
