@@ -88,7 +88,7 @@ function quickmaps_profile_gmaps_form(&$form_state, $url) {
   );
   $form['continue'] = array(
     '#type' => 'submit',
-    '#value' => st('Submit'),
+    '#value' => st('Continue'),
   );
   $form['errors'] = array();
   $form['#action'] = $url;
@@ -100,7 +100,15 @@ function quickmaps_profile_gmaps_form(&$form_state, $url) {
  * Submit handler for Google Maps API key.
  */
 function quickmaps_profile_gmaps_form_submit($form, &$form_state) {
-  variable_set('googlemap_api_key', $form_state['values']['googlemap_api_key']);
+  // Can't use variable_set() since we need all the GMap default values. 
+  // Instead execute the form programmatically and have it populated.
+  $values = array(
+    'values' => array(
+      'googlemap_api_key' => $form_state['values']['googlemap_api_key']
+    )
+  );
+  require_once(drupal_get_path('module', 'gmap') . '/gmap_settings_ui.inc');
+  drupal_execute('gmap_admin_settings', $values);
 }
 
 /**
