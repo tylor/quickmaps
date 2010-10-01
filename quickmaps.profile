@@ -35,8 +35,8 @@ function quickmaps_profile_modules() {
 }
 
 /**
- * Return a list of tasks that this profile supports. We want to enter a
- * Google Maps API key before the site is ready for use.
+ * Return a list of tasks that this profile supports.
+ * Enter a Google Maps API key before the site is ready for use.
  *
  * @return
  *   A keyed array of tasks the profile will perform during
@@ -51,7 +51,7 @@ function quickmaps_profile_task_list() {
 }
 
 /**
- * Do any tasks then take over installer and run our own install task.
+ * Do any needed tasks then take over installer and run GMap install task.
  */
 function quickmaps_profile_tasks(&$task, $url) {
   // Get control of installer.
