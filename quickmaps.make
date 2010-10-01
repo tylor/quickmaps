@@ -33,7 +33,9 @@ projects[node_import][download][revision] = "DRUPAL-6--1:2010-09-30"
 ; Fix PHP 5.3 error: http://drupal.org/node/763036#comment-3517142
 projects[node_import][patch][] = "http://drupal.org/files/issues/node_import_php5.3_fix.patch"
 
-; Dependency of node_import
+; Dependencies of node_import
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.6"
 
+projects[advanced_help][subdir] = "contrib"
+projects[advanced_help][version] = "1.2"
