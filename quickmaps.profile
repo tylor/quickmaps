@@ -28,7 +28,7 @@ function quickmaps_profile_modules() {
   'menu',
   // Contrib
   'admin', 'content', 'text', 'ctools', 'features', 'strongarm', 'gmap',
-  'date_api', 'date', 'advanced_help', 'node_import', 'views', 
+  'date_api', 'date', 'node_import', 'views',
   // Features
   'quickmap',
   );

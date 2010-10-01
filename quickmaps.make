@@ -36,6 +36,3 @@ projects[node_import][patch][] = "http://drupal.org/files/issues/node_import_php
 ; Dependencies of node_import
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.6"
-
-projects[advanced_help][subdir] = "contrib"
-projects[advanced_help][version] = "1.2"
