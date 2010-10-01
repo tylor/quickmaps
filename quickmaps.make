@@ -24,13 +24,16 @@ projects[gmap][subdir] = "contrib"
 projects[gmap][version] = "1.1"
 
 projects[node_import][subdir] = "contrib"
-projects[node_import][version] = "1.0-rc4"
+projects[node_import][version] = "1.x-dev"
 
-; Dependencies of node_import
+projects[node_import][type] = "module"
+projects[node_import][download][type] = "cvs"
+projects[node_import][download][module] = "contributions/modules/node_import"
+projects[node_import][download][revision] = "DRUPAL-6--1:2010-09-30"
+; Fix PHP 5.3 error: http://drupal.org/node/763036#comment-3517142
+projects[node_import][patch][] = "http://drupal.org/files/issues/node_import_php5.3_fix.patch"
 
+; Dependency of node_import
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.6"
-
-projects[advanced_help][subdir] = "contrib"
-projects[advanced_help][version] = "1.2"
 
