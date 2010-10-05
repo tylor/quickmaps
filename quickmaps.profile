@@ -69,7 +69,9 @@ function quickmaps_profile_tasks(&$task, $url) {
       return $output;
     }
     else {
-      variable_set('site_frontpage', 'map')
+      variable_set('site_frontpage', 'map');
+      // Disable all blocks since we are using admin module.
+      db_query("UPDATE {blocks} SET status = 0, region = ''");
       drupal_flush_all_caches(); // Definitely needed to build location fields.
       $task = 'profile-finished';
     }
