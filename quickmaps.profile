@@ -69,6 +69,7 @@ function quickmaps_profile_tasks(&$task, $url) {
       return $output;
     }
     else {
+      variable_set('site_frontpage', 'map')
       drupal_flush_all_caches(); // Definitely needed to build location fields.
       $task = 'profile-finished';
     }

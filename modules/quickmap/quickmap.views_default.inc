@@ -6,7 +6,7 @@
 function quickmap_views_default_views() {
   $views = array();
 
-  // Exported view: Map
+  // Exported view: map
   $view = new view;
   $view->name = 'map';
   $view->description = '';
@@ -204,7 +204,7 @@ function quickmap_views_default_views() {
   $handler->override_option('style_plugin', 'gmap');
   $handler->override_option('style_options', array(
     'grouping' => '',
-    'macro' => '[gmap |behavior=+autozoom |width=100% |height=400px]',
+    'macro' => '[gmap |behavior=+autozoom |width=100% |height=500px]',
     'datasource' => 'fields',
     'latfield' => 'field_latitude_value',
     'lonfield' => 'field_longitude_value',
