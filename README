@@ -4,9 +4,15 @@ To build this distribution:
     - download Drupal
     - place quickmaps in the 'profiles' directory
     - run './build.sh' from the quickmaps directory to create the codebase with drush make. 
-    - install Drupal normally.
+    - install Drupal using the Quickmaps install profile.
 
 If you need to clean your build, try:
     - rm -rf modules/
     - git checkout modules # Resets modules/quickmap
     - ./build.sh
+
+
+
+TODO:
+  - Add site_frontpage to install profile instead of feature
+  - Add target=_blank to GMap link
