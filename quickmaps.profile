@@ -84,7 +84,7 @@ function quickmaps_profile_gmaps_form(&$form_state, $url) {
     '#type' => 'textfield',
     '#title' => st('Google Maps API Key'),
     '#default_value' => NULL,
-    '#description' => st('To complete installation, please enter your Google Maps API key. If you do not have one, get it <a href="http://code.google.com/apis/maps/signup.html">here</a>.'),
+    '#description' => st('To complete installation, please enter your Google Maps API key. If you do not have one, get it <a target="_blank" href="http://code.google.com/apis/maps/signup.html">here</a>.'),
     '#required' => TRUE,
   );
   $form['continue'] = array(
