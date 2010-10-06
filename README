@@ -11,3 +11,7 @@ If you need to clean your build, try:
     - rm -rf modules/
     - git checkout modules # Resets modules/quickmap
     - ./build.sh
+
+Todo:
+    - Add Javascript geolocation API detection
+    - Add a simple full window theme
